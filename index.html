@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+    </script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Machine Learning Engineering - Lecture 1</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="theme/mrsharky.css" id="theme" />
+
+    <!-- appearance plugin requirements -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link rel="stylesheet" href="plugin/appearance/appearance.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-state="slide1d3"
+          data-background-image=""
+          data-background-transition="concave"
+          data-background-size="cover"
+          data-background-opacity="0.15"
+          data-menu-title="Title"
+        >
+          <div id="slide1d3">
+            <svg style="z-index: -100" id="slide1d3container"></svg>
+            <div
+              style="
+                pointer-events: none;
+                position: absolute;
+                top: 30%;
+                text-align: center;
+                width: 100%;
+              "
+            >
+              <h2>Example Presentation</h2>
+              <h3>Presenter Name</h3>
+              <h3>Date</h3>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <h3>Section 1 - Slide 1</h3>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Section 1 - Slide 2</h3>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Section 2 - Slide 1</h3>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="plugin/appearance/appearance.js"></script>
+    <script src="plugin/external-code/externalcode.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="theme/d3_bubble_animation.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        // Printable friendly
+        pdfSeparateFragments: false,
+        showSlideNumber: "print",
+        slideNumber: "c/t",
+
+        // elapsed-time-bar settings
+        allottedTime: 2.5 * 60 * 60 * 1000,
+        progressBarHeight: 3,
+        barColor: "rgb(200,0,0)",
+        pausedBarColor: "rgba(200,0,0,.6)",
+
+        width: "100%",
+        height: "100%",
+        hash: true,
+
+        // Add custom menu option to go back to home page
+        menu: {
+          custom: [
+            {
+              title: "Home",
+              icon: "<i class='fa fa-home' aria-hidden='true'></i>",
+              src: "menu.html",
+            },
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          Appearance,
+          Externalcode,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMenu,
+          RevealNotes,
+          RevealZoom,
+        ],
+        dependencies: [
+          {
+            src: "plugin/external/external.js",
+            condition: function () {
+              return !!document.querySelector(
+                "[data-external],[data-external-replace]"
+              );
+            },
+          },
+          { src: "https://d3js.org/d3.v3.min.js" },
+          { src: "https://cdn.jsdelivr.net/npm/@gitgraph/js" },
+          { src: "plugin/elapsed-time-bar/elapsed-time-bar.js" },
+        ],
+      });
+    </script>
+    <script type="text/javascript">
+      var d3SlideOneDrawn = false;  
+
+      // D3 graphic on first slide
+      Reveal.addEventListener("slide1d3", function () {
+        if (d3SlideOneDrawn == false) {
+          D3Slide1Animation("slide1d3container");
+          d3SlideOneDrawn = true;
+          window.dispatchEvent(new Event("resize"));
+        }
+      });
+    </script>
+  </body>
+</html>
